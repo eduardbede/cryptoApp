@@ -1,4 +1,4 @@
-import { useState, useEffect, useLayoutEffect, useRef } from "react"
+import { useState, useEffect, useRef } from "react"
 import PerformanceComponent from "./PerformanceComponent"
 import BlockSize from "./BlockSize"
 import NumberOfCoin from "./NumberOfCoin"

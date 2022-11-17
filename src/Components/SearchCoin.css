@@ -1,0 +1,10 @@
+.inputSearch{
+    width: 40vw;
+    border-radius: 10px;
+    margin-left: 5px;
+    padding: 0px 8px;
+}
+
+.labelSearch{
+    color: white;
+}

@@ -1,0 +1,45 @@
+.allCurrency{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Roboto', sans-serif;
+}
+
+.currencyDiv{
+    cursor: pointer;
+    background-color: #3e4240;
+    display: flex;
+    height: 100%;
+    padding: 0px 10px;
+    
+}
+
+.currencySelect{
+    display: flex;
+    align-items: center;
+    gap: 10%;
+    background-color: #3e4240;
+    border-bottom: 1px solid white;
+    padding-left: 10px !important;
+    padding: 5px;
+}
+
+.currencySelect:nth-last-child(1){
+    border-bottom: none;
+}
+
+
+.openDivCurrency{
+    cursor: pointer;
+    color: white;
+    z-index: 22;
+    position: absolute;
+    top: 20;
+    margin-top: 33px;
+    width: 100%;
+}
+
+
+.currencyImg{
+    height: 18px;
+}

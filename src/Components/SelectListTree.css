@@ -1,0 +1,10 @@
+.imgTreeMap{
+    height: 25px;
+    color: white
+}
+
+.viewDiv{
+    cursor: pointer;
+    margin: 0px 5px;
+    padding: 0px 1px;
+}

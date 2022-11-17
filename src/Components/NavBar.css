@@ -1,0 +1,47 @@
+.navBlock{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navBlockLeft{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100vw;
+    height: 40px;
+    gap: 5px;
+    padding: 5px 6px;
+  }
+
+.navBlockRight{
+    padding: 3px;
+    background-color: #3E4240;
+    color: white;
+}
+
+.navRight{
+  display: flex;
+  padding: 5px 6px;
+}
+
+.hiddenWidth{
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  position: absolute;
+  left: 40px;
+  top: 56px;
+  z-index: 100;
+}
+
+.buttonDivHidden{
+  cursor: pointer;
+  margin: 5px 6px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #3E4240;
+  width:30px;
+  height: 30px;
+}

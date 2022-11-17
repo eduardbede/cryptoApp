@@ -1,0 +1,33 @@
+
+.parentGlobalData{
+    position: relative;
+    overflow: hidden;
+    height: 50px;
+}
+
+.globalData{
+    display: flex;
+    align-items: center;
+    color: white;
+    gap:5px;
+    padding: 5px 10px;
+    white-space: nowrap;
+    position: absolute;
+    overflow-x: auto;
+    scrollbar-width: none;
+    height: 100%;
+    width: 100%;
+   
+}
+
+.globalData::-webkit-scrollbar{
+    width:1px;
+    height: 1px;
+}
+
+.globalData > div > span{
+    color: #9A9FB3
+}
+.globalData > div{
+    color: #455DA6;
+}

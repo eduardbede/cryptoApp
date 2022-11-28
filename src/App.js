@@ -5,7 +5,7 @@ import Navbar from './Components/Navbar'
 import GlobalData from './Components/GlobalData'
 import ListCoins from './Components/ListCoins'
 import ErrorPage from './Components/ErrorPage'
-/* import CoinPage from './Components/CoinPage' */
+import CoinPage from './Components/CoinPage'
 import './App.css'
 import { Route, Routes, useLocation, HashRouter } from 'react-router-dom'
 
@@ -79,7 +79,7 @@ export default function App(){
                   <Routes>
                       <Route path="/" element={<Nivo option={option} />} />
                       <Route path="/currencies" element={<ListCoins setLocation={setLocation} option={option} />} />
-                      {/* <Route path="/currencies/:userId" element={<CoinPage />} /> */}
+                      <Route path="/currencies/:userId" element={<CoinPage option={option}/>} />
                       <Route path="*" element={<ErrorPage />} />
                   </Routes>
                   

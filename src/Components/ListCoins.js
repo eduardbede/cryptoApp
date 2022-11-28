@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import downArrow from '../../src/Img/arrow_down_icon.png'
 import upArrow from '../../src/Img/arrow_up_icon.png'
 import { AiFillCaretDown, AiFillCaretUp } from "react-icons/ai";
-import { BsArrowDown, BsArrowUp } from "react-icons/bs";
+import { Link } from 'react-router-dom';
 
 import "./ListCoins.css"
 
@@ -44,7 +44,7 @@ export default function ListCoins({setLocation ,option}) {
         sortArrayFetch(sortBy, result)
       })
 
-          /*   const time = setTimeout(()=>{
+          /*   const time = setInterval(()=>{
               console.log('work?')
               setTimp(prevState=>{
                 return prevState+1
@@ -57,6 +57,7 @@ export default function ListCoins({setLocation ,option}) {
   },[timp, noOfPage, option.currencyIndex])
 
   function sortArrayFetch(el, res){
+    setDataList([])
     if(sort.fetch === 'desc'){
       setDataList(res?.sort((a,b)=>{
         if(typeof a[el] === 'number' || typeof a[el] === 'object'){
@@ -156,8 +157,6 @@ function colorOfTable(element){
 }
 
 function sortIndicator(e){
-  console.log(e.target.id)
-  /* e.stopPropagation() */
   if(e.target.id === 'market_cap'){
     console.log(e.target.id)
     if(sort.arraySort === 'asc'){
@@ -246,19 +245,19 @@ function sortIndicator(e){
 const data = dataList?.map(el=>{
      return <tr key={el?.id} className='tableTr'>
               <td className='sticky'>{el?.market_cap_rank}</td>
-              {/* <td className='sticky'>
+              <td className='sticky'>
                <Link to={el?.id}> <div className='nameImgDiv'>
                         <img className='imgTable' src={el?.image} alt={el?.image}></img>
                         <div>{el?.name}</div>
                       </div>
                </Link>
-              </td> */}
-              <td className='sticky'>
+              </td>
+             {/*  <td className='sticky'>
                 <div className='nameImgDiv'>
                         <img className='imgTable' src={el?.image} alt={el?.image}></img>
                         <div>{el?.name}</div>
                  </div>
-              </td>
+              </td> */}
               <td>{el.symbol?.toUpperCase()}</td>
               <td>{finalPrice(el?.current_price)}</td>
               <td  

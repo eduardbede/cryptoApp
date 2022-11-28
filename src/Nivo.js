@@ -1,6 +1,6 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
-import {ResponsiveTreeMap, ResponsiveTreeMapCanvas, ResponsiveTreeMapHtml } from '@nivo/treemap'
+import { ResponsiveTreeMapHtml } from '@nivo/treemap'
 import './Components/loading.scss'
 
 export default function Nivo(props) {

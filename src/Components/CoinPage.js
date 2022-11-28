@@ -16,7 +16,7 @@ let requestOptions = {
     method: 'GET',
     redirect: 'follow'
     };
-    
+
 function checkStatus(){
     fetch(`https://api.coingecko.com/api/v3/coins/${userId}`,
         requestOptions)
@@ -34,11 +34,8 @@ function checkStatus(){
 
     useEffect(()=>{
         checkStatus()
-    },[])
+    },[userId])
 
-    console.log(dataCoin)
-
-    
 return (
     <div>
        {status ? <ErrorPage /> :

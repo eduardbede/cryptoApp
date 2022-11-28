@@ -10,7 +10,7 @@ export default function NivoLineChart({userId, option}) {
             {
                 "id": "usa",
                 "color": "157.29,80.09%,43.33%",
-                "data":[]
+                "data":[{x:'',y:''}]
             }
         ]
     )
@@ -55,7 +55,7 @@ function checkStatus(){
                 return {x:newDate, y:parseFloat(el[1])}
         })
         setData(prevData=>{
-        return [{...prevData[0],data:dataLine}]})
+        return [{...prevData[0] ,data:dataLine}]})
 }).catch(function(){
     console.log('404 Not Found');
     })
@@ -64,7 +64,6 @@ function checkStatus(){
 useEffect(()=>{
     checkStatus()
 },[currency[option.currencyIndex].currency])
-
 
 
 function tooltipCustom(node){
@@ -79,7 +78,7 @@ function tooltipCustom(node){
     <div className='nivoLineChart'>
         <ResponsiveLine
             data={data}
-            margin={{ top: 100, right: 0, bottom: 50, left: 80 }}
+            margin={{ top: 100, right: 10, bottom: 50, left: 80 }}
             xScale={{ type: 'point' }}
             yScale={{
                 type: 'linear',
@@ -96,7 +95,7 @@ function tooltipCustom(node){
                 orient: 'bottom',
                 tickSize: 5,
                 tickPadding: 5,
-                tickRotation: width < 768 ? 90 : 50,
+                tickRotation: width < 768 ? -90 : -50,
             }}
             axisLeft={{
                 orient: 'left',

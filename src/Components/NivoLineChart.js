@@ -79,7 +79,7 @@ function tooltipCustom(node){
     <div className='nivoLineChart'>
         <ResponsiveLine
             data={data}
-            margin={{ top: 50, right: 60, bottom: 50, left: 80 }}
+            margin={{ top: 100, right: 0, bottom: 50, left: 80 }}
             xScale={{ type: 'point' }}
             yScale={{
                 type: 'linear',
@@ -116,12 +116,17 @@ function tooltipCustom(node){
             useMesh={true}
             enableGridX={false}
             enablePoints={false}
-            /* enableArea={true} */
+            crosshairType='cross'
             areaOpacity={0.05}
             theme={{
                     "textColor": "#7B8196",
                     "fontSize": 12,
-                    'fontFamily' : "Roboto"
+                    'fontFamily' : "Roboto",
+                     'crosshair':{
+                        line:{
+                            stroke:"white"
+                        }
+                    }
                 }}
             tooltip={( node ) => tooltipCustom(node)}
         />

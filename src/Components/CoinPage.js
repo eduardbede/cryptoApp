@@ -4,10 +4,8 @@ import { useParams } from 'react-router-dom'
 import ErrorPage from './ErrorPage'
 import { Interweave } from 'interweave';
 import './CoinPage.css'
-import useWindowDimensions from './useWindowDimensions';
 
 export default function CoinPage({option}) {
-    const { height, width } = useWindowDimensions();
     const [status, setStatus] = useState(false)
     const [dataCoin, setDataCoin] = useState([])
 
@@ -16,7 +14,7 @@ let requestOptions = {
     method: 'GET',
     redirect: 'follow'
     };
-
+    
 function checkStatus(){
     fetch(`https://api.coingecko.com/api/v3/coins/${userId}`,
         requestOptions)

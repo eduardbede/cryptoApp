@@ -6,6 +6,7 @@ import GlobalData from './Components/GlobalData'
 import ListCoins from './Components/ListCoins'
 import ErrorPage from './Components/ErrorPage'
 import CoinPage from './Components/CoinPage'
+import SearchCoin from './Components/SearchCoin'
 import './App.css'
 import { Route, Routes, useLocation, HashRouter } from 'react-router-dom'
 
@@ -56,10 +57,15 @@ export default function App(){
       return {...prevProps, currencyIndex:el}
     })
   }
+
   function changeView(){
     setListTree(prevProps=>{
       return !prevProps
     })
+  }
+
+  function changeViewFalse(){
+    setListTree(true)
   }
 
   return (
@@ -73,13 +79,14 @@ export default function App(){
                     changeCurrency={changeCurrency}
                     listTree={listTree}
                     changeView={changeView} 
-                    
+                    changeViewFalse={changeViewFalse}
                     />
 
                   <Routes>
                       <Route path="/" element={<Nivo option={option} />} />
                       <Route path="/currencies" element={<ListCoins setLocation={setLocation} option={option} />} />
                       <Route path="/currencies/:userId" element={<CoinPage option={option}/>} />
+                      <Route path='/:userId' element={<CoinPage option={option} />} />
                       <Route path="*" element={<ErrorPage />} />
                   </Routes>
                   

@@ -5,7 +5,7 @@ import NumberOfCoin from "./NumberOfCoin"
 import CurrencySelect from "./CurrencySelect"
 import SelectListTree from "./SelectListTree"
 import { HiOutlineMenuAlt2 } from "react-icons/hi";
-/* import SearchCoin from "./SearchCoin" */
+import SearchCoin from "./SearchCoin"
 import "./NavBar.css"
 
 
@@ -93,7 +93,6 @@ useEffect(()=>{
   }
 
   function openCloseAll(){
-    
     setOpen(()=>{
       return {
               performance:false,
@@ -118,7 +117,7 @@ useEffect(()=>{
 
   return (
     <nav className='navBlock' onClick={(e)=>stopProp(e)} ref={ref}>
-      {width > 790 ? <div className="navBlockLeft">
+      {width > 876 ? <div className="navBlockLeft">
       {!props.listTree && <PerformanceComponent option={props.option.performance}
                             changePerformance={changePerformance} 
                             isOpen={open} 
@@ -145,10 +144,10 @@ useEffect(()=>{
       {(menuOpen && width <= 790) && 
         <div className="hiddenWidth" >
         {!props.listTree && <PerformanceComponent option={props.option.performance}
-                            changePerformance={changePerformance} 
-                            isOpen={open} 
-                            openClose={openClose}
-                            openCloseAll={openCloseAll}/>}
+                              changePerformance={changePerformance} 
+                              isOpen={open} 
+                              openClose={openClose}
+                              openCloseAll={openCloseAll}/>}
         {!props.listTree && <BlockSize option={props.option.block}
                               changeBlockSize={changeBlockSize} 
                               isOpen={open} 
@@ -168,9 +167,9 @@ useEffect(()=>{
                           openCloseAll={openCloseAll} />
         </div>}
       <div className='navRight'>
-          {/* <div>
-            <SearchCoin />
-          </div> */}
+          <div>
+            <SearchCoin changeViewFalse={props.changeViewFalse} />
+          </div>
           <div className="navBlockRight">
             <SelectListTree listTree={props.listTree}
                             changeView={props.changeView} />

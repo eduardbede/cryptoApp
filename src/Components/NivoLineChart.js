@@ -4,7 +4,8 @@ import './NivoLineChart.css'
 import useWindowDimensions from './useWindowDimensions';
 
 export default function NivoLineChart({userId, option}) {
- const { height, width } = useWindowDimensions();
+
+ const { width } = useWindowDimensions();
  const [data, setData] = useState(
         [
             {
@@ -63,7 +64,7 @@ function checkStatus(){
 
 useEffect(()=>{
     checkStatus()
-},[currency[option.currencyIndex].currency])
+},[currency[option.currencyIndex].currency, userId])
 
 
 function tooltipCustom(node){
@@ -74,8 +75,18 @@ function tooltipCustom(node){
             </div>  
     }
 
+    const load = <div className="container">
+                    <svg className="loader" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 340">
+                      <circle cx="170" cy="170" r="160" stroke="#E2007C"/>
+                      <circle cx="170" cy="170" r="135" stroke="#404041"/>
+                      <circle cx="170" cy="170" r="110" stroke="#E2007C"/>
+                      <circle cx="170" cy="170" r="85" stroke="#404041"/>
+                    </svg>
+                  </div>
+
   return (
     <div className='nivoLineChart'>
+        {data[0].data[0].x === '' ? load : 
         <ResponsiveLine
             data={data}
             margin={{ top: 100, right: 10, bottom: 50, left: 80 }}
@@ -102,7 +113,7 @@ function tooltipCustom(node){
                 tickSize: 5,
                 tickPadding: 5,
                 tickRotation: 0,
-                legend: 'Price',
+                legend: `Price in ${currency[option.currencyIndex].symbol}`,
                 legendOffset: -70,
                 legendPosition: 'middle'
             }}
@@ -128,7 +139,7 @@ function tooltipCustom(node){
                     }
                 }}
             tooltip={( node ) => tooltipCustom(node)}
-        />
+        />}
     </div>
   )
 }

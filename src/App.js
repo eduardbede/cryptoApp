@@ -6,6 +6,7 @@ import GlobalData from './Components/GlobalData'
 import ListCoins from './Components/ListCoins'
 import ErrorPage from './Components/ErrorPage'
 import CoinPage from './Components/CoinPage'
+import Footer from './Components/Footer'
 import './App.css'
 import { Route, Routes, useLocation } from 'react-router-dom'
 
@@ -92,6 +93,7 @@ export default function App(){
               {/* {!listTree && <div className='noOverflow'>
                               <Nivo option={option} />
                             </div>  } */}
+                <Footer />
           </div>
           {/* {listTree && <div className='backGround allTableDiv'>
                           <ListCoins />

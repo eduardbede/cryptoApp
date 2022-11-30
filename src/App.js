@@ -6,9 +6,8 @@ import GlobalData from './Components/GlobalData'
 import ListCoins from './Components/ListCoins'
 import ErrorPage from './Components/ErrorPage'
 import CoinPage from './Components/CoinPage'
-import SearchCoin from './Components/SearchCoin'
 import './App.css'
-import { Route, Routes, useLocation, HashRouter } from 'react-router-dom'
+import { Route, Routes, useLocation } from 'react-router-dom'
 
 export default function App(){
   const [option, setOption] =  useState({

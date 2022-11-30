@@ -121,14 +121,14 @@ export default function Nivo(props) {
                     })
       .catch(error => console.log('error', error)); 
 
-      /* const time = setTimeout(()=>{
+      const time = setInterval(()=>{
         setTimp(prevState=>{
           return prevState+1
         })
     },60000)
   return ()=>{
     clearTimeout(time)
-  } */
+  }
 
    },[timp, props.option])
 

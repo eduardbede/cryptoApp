@@ -44,7 +44,7 @@ export default function ListCoins({setLocation ,option}) {
         sortArrayFetch(sortBy, result)
       })
 
-          /*   const time = setInterval(()=>{
+            const time = setInterval(()=>{
               console.log('work?')
               setTimp(prevState=>{
                 return prevState+1
@@ -52,7 +52,7 @@ export default function ListCoins({setLocation ,option}) {
           },60000)
         return ()=>{
           clearTimeout(time)
-        } */
+        }
         
   },[timp, noOfPage, option.currencyIndex])
 

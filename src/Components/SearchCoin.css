@@ -9,7 +9,7 @@
 .inputSearchCoin{
     padding: 0px 5px;
     border-radius: 20px;
-    
+    outline: none;
 }
 
 .labelSearch{
@@ -27,6 +27,7 @@
     bottom: 0;
     z-index: 100;
     opacity: 0.97;
+    font-family: 'Roboto', sans-serif;
 }
 
 .buttonClass{
@@ -42,7 +43,7 @@
 
 .mappedCoins{
     position: fixed;
-    top: 100px;
+    top: 80px;
     z-index: 1000;
 }
 
@@ -51,9 +52,11 @@
     background-color: white;
     border: 1px solid black;
     max-width: 500px;
+    min-width: 200px;
     height: 40px;
     padding: 5px;
-    font-family: 'Roboto';
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
     font-size: 15px;
 }
 
